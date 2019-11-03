@@ -14,7 +14,6 @@ from toxic_helper import preprocess_text, maxlen
 
 toxic_comments = pd.read_csv('train.csv')
 
-
 toxic_comments.head()
 
 filter = toxic_comments["comment_text"] != ""
@@ -31,9 +30,7 @@ for sen in sentences:
 
 y = toxic_comments_labels.values
 
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
-
 
 tokenizer = Tokenizer(num_words=5000)
 tokenizer.fit_on_texts(X_train)
