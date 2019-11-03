@@ -3,10 +3,12 @@ from keras.preprocessing.sequence import pad_sequences
 import numpy as np
 from keras.models import load_model
 import pickle
+from flask_cors import CORS
 
 from toxic_helper import preprocess_text, maxlen
 
 app = Flask(__name__)
+CORS(app)
 
 model = load_model('model_toxic.h5')
 
